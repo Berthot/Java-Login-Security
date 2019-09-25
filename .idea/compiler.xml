@@ -9,5 +9,6 @@
         <module name="Java-Login-Security" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>
