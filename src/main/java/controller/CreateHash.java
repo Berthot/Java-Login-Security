@@ -12,6 +12,11 @@ public class CreateHash {
         hash = stringHexa(Objects.requireNonNull(gerarHash(password)));
     }
 
+    public static void main(String[] args) {
+        CreateHash x = new CreateHash("AbbA");
+        System.out.println(x.criaHash("BBB"));
+    }
+
     public String GetHash(){
         return hash;
     }

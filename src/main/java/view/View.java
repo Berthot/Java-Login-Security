@@ -7,10 +7,10 @@ public class View {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        int acc = 0;
         while (true){
-            menu();
-            String x = sc.nextLine();
+            System.out.println("sou sua thread.." + acc);
+            acc++;
         }
     }
 
