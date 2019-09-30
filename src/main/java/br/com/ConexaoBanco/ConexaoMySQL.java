@@ -11,28 +11,13 @@ public class ConexaoMySQL {
 
     }
 
-    public static void main(String[] args) throws SQLException {
+//    getConexaoMySQL();
+
+    public static void main(String[] args) {
         getConexaoMySQL();
         System.out.println(statusConection());
-
-//        ResultSet rs = selectTudo();
-//        String local = "user_login";
-//        ResultSet x = getNameFromId(1, local);
-
-
-//        while (rs.next()){
-//            int id = rs.getInt("user_id");
-//            System.out.print(id);
-//            System.out.print("----");
-//            String l = rs.getString("user_login");
-//            System.out.print(l);
-//            System.out.println();
-//        }
-
-//        if(x.next()){
-//            System.out.println(x.getString("user_login"));
-//        }
     }
+
 
 
     static ResultSet selectTudo() throws SQLException {
