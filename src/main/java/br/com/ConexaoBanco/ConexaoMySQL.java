@@ -15,9 +15,9 @@ public class ConexaoMySQL {
         getConexaoMySQL();
         System.out.println(statusConection());
 
-        ResultSet rs = selectTudo();
-        String local = "user_login";
-        ResultSet x = getNameFromId(1, local);
+//        ResultSet rs = selectTudo();
+//        String local = "user_login";
+//        ResultSet x = getNameFromId(1, local);
 
 
 //        while (rs.next()){
@@ -29,9 +29,9 @@ public class ConexaoMySQL {
 //            System.out.println();
 //        }
 
-        if(x.next()){
-            System.out.println(x.getString("user_login"));
-        }
+//        if(x.next()){
+//            System.out.println(x.getString("user_login"));
+//        }
     }
 
 
@@ -64,11 +64,11 @@ public class ConexaoMySQL {
         try {
             String driverName = "com.mysql.jdbc.Driver";
             Class.forName(driverName);
-            String serverName = "localhost";    //caminho do servidor do BD
-            String mydatabase = "pizzaria";        //nome do seu banco de dados
+            String serverName = "loginsystempuc.mysql.uhserver.com";    //caminho do servidor do BD
+            String mydatabase = "loginsystempuc";        //nome do seu banco de dados
             String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
             String username = "bertho";        //nome de um usuário de seu BD
-            String password = "123";      //sua senha de acesso
+            String password = "@pucpr2019";      //sua senha de acesso
 
             connection = DriverManager.getConnection(url, username, password);
             if (connection != null) {
@@ -89,7 +89,7 @@ public class ConexaoMySQL {
     }
 
 
-    public static String statusConection() {
+    static String statusConection() {
         return status;
     }
 
