@@ -1,8 +1,14 @@
 package br.com.ConexaoBanco;
 
-public class User {
+public class User extends DbUsers{
     private short id;
-    private String name, last, birth_day, login, password, created;
+    private String name, last, byrth, login, password;
     private char sex;
+
+    public static void main(String[] args) {
+
+    }
+
+
 
 }

@@ -21,7 +21,7 @@ public class CreateHash {
     }
 
     public static void main(String[] args) throws NoSuchAlgorithmException {
-       String pass = "1234";
+       String pass = "cook";
        CreateHash.getHash(pass);
     }
 
