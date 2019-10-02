@@ -1,33 +1,22 @@
 package br.com.ConexaoBanco;
 
 import java.sql.*;
+import java.util.Objects;
 
 public class Model {
     private static String status = "Não conectou...";
 
-    public static void main(String[] args) throws SQLException {
-        Connection conn = getConexaoMySQL();
-        System.out.println(statusConection());
+//    public static void main(String[] args) throws SQLException {
+//        Connection conn = getConexaoMySQL();
+//        System.out.println(statusConection());
+//
+//        ResultSet x = getInfo("berthott");
+//        x.next();
+//        System.out.println(x.getInt("user_id"));
+//    }
 
-        ResultSet x = getInfo("berthott");
-        x.next();
-        System.out.println(x.getInt("user_id"));
-    }
 
-    private static ResultSet getInfo(String same) throws SQLException {
-        // ex: select user_id from user_login where user_login = berthott
-        Connection conn = getConexaoMySQL();
-        String selectSql = "select user_id from public_users where user_login =?";
-        if (conn != null) {
-            PreparedStatement statement = conn.prepareStatement(selectSql);
-            statement.setString(1, same);
-            return statement.executeQuery();
-        }
-        return null;
-    }
-
-    public ResultSet submit(String firstName, String lastName, String byrth, char sex, String login, String pass) throws SQLException {
-
+    public ResultSet setUserInfo(String firstName, String lastName, String byrth, char sex, String login, String pass) throws SQLException {
         String selectSql = "insert into public_users (default,?, ?, ?, ?, ?, ?, default);";
         Connection connSubmit = getConexaoMySQL();
 
@@ -44,36 +33,50 @@ public class Model {
         return null;
     }
 
-    static ResultSet selectTudo() throws SQLException {
-        String selectSql = "select * from users";
-        Connection conn = getConexaoMySQL();
-        if (conn != null) {
-            PreparedStatement statement = conn.prepareStatement(selectSql);
+    public ResultSet getIdFromLogin(String login) throws SQLException {
+
+        String selectSql = "select user_id from public_users where user_login = ?;";
+        Connection connSubmit = getConexaoMySQL();
+
+        if (connSubmit != null) {
+            PreparedStatement statement = connSubmit.prepareStatement(selectSql);
+            statement.setString(1, login);
             return statement.executeQuery();
         }
-
         return null;
     }
 
-    static ResultSet getNameFromId(int id, String select) throws SQLException {
-        String selectSql = "select " + select + " from users where user_id = ?";
-        Connection conn = getConexaoMySQL();
-        if (conn != null) {
-            PreparedStatement statement = conn.prepareStatement(selectSql);
+    public ResultSet getPassFromId(String id) throws SQLException {
+
+        String selectSql = "select user_pass from public_users where user_id = ?;";
+        Connection connSubmit = getConexaoMySQL();
+
+        if (connSubmit != null) {
+            PreparedStatement statement = connSubmit.prepareStatement(selectSql);
+            statement.setString(1, id);
+            return statement.executeQuery();
+        }
+        return null;
+    }
+
+    public ResultSet getUserInfo(int id) throws SQLException {
+        String selectSql = "select * from public_users where user_id = ?);";
+        Connection connSubmit = getConexaoMySQL();
+
+        if (connSubmit != null) {
+            PreparedStatement statement = connSubmit.prepareStatement(selectSql);
             statement.setInt(1, id);
             return statement.executeQuery();
         }
         return null;
     }
 
-    private static boolean FecharConexao() {
+    private static void FecharConexao() {
         try {
-            getConexaoMySQL().close();
-            return true;
+            Objects.requireNonNull(getConexaoMySQL()).close();
 
-        } catch (SQLException e) {
+        } catch (SQLException ignored) {
 
-            return false;
         }
     }
 

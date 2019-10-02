@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="065b7195-a9bf-4719-ae32-a42dfe4ac1f4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/ConexaoMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/DbUsers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Usuario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/ConexaoMySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/ConexaoMySQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/DbUsers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/DbUsers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/User.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/TreatmentModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/Model.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +159,7 @@
       <workItem from="1569365473281" duration="15199000" />
       <workItem from="1569868599962" duration="7268000" />
       <workItem from="1569883060220" duration="8570000" />
-      <workItem from="1569973421823" duration="4857000" />
+      <workItem from="1569973421823" duration="6551000" />
     </task>
     <servers />
   </component>
