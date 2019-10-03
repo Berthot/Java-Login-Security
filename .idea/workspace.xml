@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="065b7195-a9bf-4719-ae32-a42dfe4ac1f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainView.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Java-Login-Security.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/View.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,10 +22,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="module-info" />
       </list>
     </option>
   </component>
@@ -36,6 +48,9 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="1RGBUYRZ7eivWtLQCXEly3YfkgZ" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -48,6 +63,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -57,7 +73,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -74,39 +90,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.User">
-    <configuration name="ConexaoMySQL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.ConexaoBanco.ConexaoMySQL" />
+  <component name="RunManager" selected="Application.View">
+    <configuration name="MainView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.MainView" />
       <module name="Java-Login-Security" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.ConexaoBanco.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateHash" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="controller.CreateHash" />
-      <module name="Java-Login-Security" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DbUsers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.ConexaoBanco.DbUsers" />
-      <module name="Java-Login-Security" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.ConexaoBanco.*" />
+          <option name="PATTERN" value="view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,12 +117,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="controller.User" />
-      <module name="LoginSystem" />
+    <configuration name="TreatmentModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.ConexaoBanco.TreatmentModel" />
+      <module name="Java-Login-Security" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.*" />
+          <option name="PATTERN" value="br.com.ConexaoBanco.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.ConexaoBanco.User" />
+      <module name="Java-Login-Security" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.ConexaoBanco.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="View" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.View" />
+      <module name="Java-Login-Security" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -142,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.View" />
+        <item itemvalue="Application.MainView" />
         <item itemvalue="Application.User" />
         <item itemvalue="Application.Model" />
-        <item itemvalue="Application.DbUsers" />
-        <item itemvalue="Application.CreateHash" />
-        <item itemvalue="Application.ConexaoMySQL" />
+        <item itemvalue="Application.TreatmentModel" />
       </list>
     </recent_temporary>
   </component>
@@ -167,6 +183,7 @@
       <workItem from="1569883060220" duration="8570000" />
       <workItem from="1569973421823" duration="8115000" />
       <workItem from="1570040715479" duration="5872000" />
+      <workItem from="1570135057109" duration="4926000" />
     </task>
     <servers />
   </component>

@@ -7,9 +7,8 @@ public class View {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-
-
+        menu();
+        sc.nextLine();
     }
 
     static void menu(){
