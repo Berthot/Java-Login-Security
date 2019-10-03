@@ -23,14 +23,15 @@ public class Model {
     }
 
     static void setUserInfo(String firstName, String lastName, String byrth, char sex, String login, String pass) throws SQLException {
-        String selectSql = "insert into public_users (default,?, ?, ?, ?, ?, ?, default);";
+        String selectSql = "insert into public_users values (default,?, ?, ?, ?, ?, ?, default);";
         Connection connSubmit = getConexaoMySQL();
 
         if (connSubmit != null) {
             PreparedStatement statement = connSubmit.prepareStatement(selectSql);
             statement.setString(1, firstName);
             statement.setString(2, lastName);
-            statement.setString(3, byrth);
+            statement.setObject(3, byrth, Types.DATE);
+//            statement.setString(3, byrth);
             statement.setString(4, String.valueOf(sex));
             statement.setString(5, login);
             statement.setString(6, pass);
