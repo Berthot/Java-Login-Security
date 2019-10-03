@@ -9,8 +9,8 @@ import java.util.stream.IntStream;
 
 public class TreatmentModel extends Model{
 
-    public List<String> getInfos() throws SQLException {
-        ResultSet x = getUserInfo(1);
+    public static List<String> getInfos(short id) throws SQLException {
+        ResultSet x = getUserInfo(id);
         Objects.requireNonNull(x).next();
         List<String> lista = IntStream.range(1,9).mapToObj(n -> {
             try {

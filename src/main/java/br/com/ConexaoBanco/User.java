@@ -4,6 +4,8 @@ import br.com.ConexaoBanco.Model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
+import java.util.ArrayList;
+import java.util.List;
 
 public class User {
     private  short id;
@@ -35,13 +37,13 @@ public class User {
 
     public static User get_user(short id) throws SQLException {
         ResultSet row = Model.getUserInfo(id);
-        row.getString("user_firstName");
+        List<String> user_info = TreatmentModel.getInfos(id);
+        return new User("batata", "Braun", null, "all", "1234", 'M'); // temporario
+
+
+
 
     }
-
-
-
-
 
 
 }
