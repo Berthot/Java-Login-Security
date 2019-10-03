@@ -1,7 +1,5 @@
 package br.com.ConexaoBanco;
 
-import jdk.internal.org.objectweb.asm.Type;
-
 import java.sql.*;
 import java.util.List;
 import java.util.Objects;
@@ -31,10 +29,10 @@ public class Model {
         if (connSubmit != null) {
             PreparedStatement statement = connSubmit.prepareStatement(selectSql);
             statement.setString(1, firstName);
-            statement.setObject(2, lastName, Types.VARCHAR); // null
+            statement.setString(2, lastName);
             statement.setObject(3, byrth, Types.DATE);
 //            statement.setString(3, byrth);
-            statement.setObject(4, String.valueOf(sex), Type.CHAR);
+            statement.setString(4, String.valueOf(sex));
             statement.setString(5, login);
             statement.setString(6, pass);
             statement.executeUpdate();
