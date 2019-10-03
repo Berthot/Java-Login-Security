@@ -1,7 +1,9 @@
 package br.com.ConexaoBanco;
 import br.com.ConexaoBanco.Model;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 
 public class User {
     private  short id;
@@ -9,7 +11,7 @@ public class User {
     private char sex;
 
     public static void main(String[] args) throws SQLException {
-        User allan = new User("allan", "Braun", null, "all", "1234", 'M');
+        User allan = new User("batata", "Braun", null, "all", "1234", 'M');
         allan.save();
     }
 
@@ -22,11 +24,22 @@ public class User {
         this.sex = sex;  //pode ser nulo
     }
 
-    public boolean save() throws SQLException {
-
-        Model.setUserInfo(name, last_name, birt, sex, login, password);
-        return true;
+    public boolean save() {
+        try {
+            Model.setUserInfo(name, last_name, birt, sex, login, password);
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
     }
+
+    public static User get_user(short id) throws SQLException {
+        ResultSet row = Model.getUserInfo(id);
+        row.getString("user_firstName");
+
+    }
+
+
 
 
 
