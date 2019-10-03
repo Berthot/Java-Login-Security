@@ -22,7 +22,7 @@ public class Model {
         return null;
     }
 
-    void setUserInfo(String firstName, String lastName, String byrth, char sex, String login, String pass) throws SQLException {
+    static void setUserInfo(String firstName, String lastName, String byrth, char sex, String login, String pass) throws SQLException {
         String selectSql = "insert into public_users (default,?, ?, ?, ?, ?, ?, default);";
         Connection connSubmit = getConexaoMySQL();
 
@@ -34,7 +34,7 @@ public class Model {
             statement.setString(4, String.valueOf(sex));
             statement.setString(5, login);
             statement.setString(6, pass);
-            statement.executeQuery();
+            statement.executeUpdate();
         }
     }
 
