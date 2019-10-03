@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="065b7195-a9bf-4719-ae32-a42dfe4ac1f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/TreatmentModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/TreatmentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/TreatmentModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/ConexaoMySQL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/DbUsers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/View.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,12 +126,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="View" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.View" />
+    <configuration name="TreatmentModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.ConexaoBanco.TreatmentModel" />
       <module name="Java-Login-Security" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="view.*" />
+          <option name="PATTERN" value="br.com.ConexaoBanco.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,10 +142,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Model" />
+        <item itemvalue="Application.TreatmentModel" />
         <item itemvalue="Application.DbUsers" />
         <item itemvalue="Application.CreateHash" />
         <item itemvalue="Application.ConexaoMySQL" />
-        <item itemvalue="Application.View" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +164,8 @@
       <workItem from="1569365473281" duration="15199000" />
       <workItem from="1569868599962" duration="7268000" />
       <workItem from="1569883060220" duration="8570000" />
-      <workItem from="1569973421823" duration="6551000" />
+      <workItem from="1569973421823" duration="8115000" />
+      <workItem from="1570040715479" duration="5872000" />
     </task>
     <servers />
   </component>
