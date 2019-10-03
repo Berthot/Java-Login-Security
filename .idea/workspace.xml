@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="065b7195-a9bf-4719-ae32-a42dfe4ac1f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/TreatmentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ConexaoBanco/TreatmentModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/ConexaoMySQL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/DbUsers.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/ConexaoBanco/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/View.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +26,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -74,7 +73,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.User">
+  <component name="RunManager" selected="Application.Model">
     <configuration name="ConexaoMySQL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.ConexaoBanco.ConexaoMySQL" />
       <module name="Java-Login-Security" />
@@ -127,12 +126,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="controller.User" />
-      <module name="LoginSystem" />
+    <configuration name="TreatmentModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.ConexaoBanco.TreatmentModel" />
+      <module name="Java-Login-Security" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.*" />
+          <option name="PATTERN" value="br.com.ConexaoBanco.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -142,8 +141,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.User" />
         <item itemvalue="Application.Model" />
+        <item itemvalue="Application.TreatmentModel" />
         <item itemvalue="Application.DbUsers" />
         <item itemvalue="Application.CreateHash" />
         <item itemvalue="Application.ConexaoMySQL" />
