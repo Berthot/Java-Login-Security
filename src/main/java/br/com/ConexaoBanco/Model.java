@@ -1,5 +1,6 @@
 package br.com.ConexaoBanco;
 
+
 import java.sql.*;
 import java.util.List;
 import java.util.Objects;
@@ -10,7 +11,7 @@ public class Model {
     private static String status = "Não conectou...";
 
 
-    ResultSet getUserInfo(int id) throws SQLException {
+    static ResultSet getUserInfo(short id) throws SQLException {
         String selectSql = "select * from public_users where user_id = ?";
         Connection connSubmit = getConexaoMySQL();
 
@@ -29,10 +30,10 @@ public class Model {
         if (connSubmit != null) {
             PreparedStatement statement = connSubmit.prepareStatement(selectSql);
             statement.setString(1, firstName);
-            statement.setString(2, lastName);
+            statement.setObject(2, lastName, Types.VARCHAR); // null
             statement.setObject(3, byrth, Types.DATE);
 //            statement.setString(3, byrth);
-            statement.setString(4, String.valueOf(sex));
+            statement.setObject(4, String.valueOf(sex), Types.CHAR);
             statement.setString(5, login);
             statement.setString(6, pass);
             statement.executeUpdate();
