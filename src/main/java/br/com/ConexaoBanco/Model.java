@@ -23,6 +23,19 @@ public class Model {
         return null;
     }
 
+    static ResultSet getUserInfo(String login) throws SQLException {
+        String selectSql = "select * from public_users where user_login = ?";
+        Connection connSubmit = getConexaoMySQL();
+
+        if (connSubmit != null) {
+            PreparedStatement statement = connSubmit.prepareStatement(selectSql);
+            statement.setString(1, login);
+            return statement.executeQuery();
+        }
+        return null;
+    }
+
+
     static void setUserInfo(String firstName, String lastName, String byrth, char sex, String login, String pass) throws SQLException {
         String selectSql = "insert into public_users values (default,?, ?, ?, ?, ?, ?, default);";
         Connection connSubmit = getConexaoMySQL();
