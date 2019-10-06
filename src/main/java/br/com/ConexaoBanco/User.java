@@ -10,21 +10,21 @@ import java.util.List;
 public class User {
     private  short id;
     private String name, last_name, birth, login, password, timeStamp;
-    private char sex;
+    private Character sex;
 
     public static void main(String[] args) throws SQLException {
 //        User a = User.get_user((short) 14);
 //        User b = User.get_user("jc");
 //        System.out.println(a);
 //        System.out.println(b);
-//        User batata = new User("batata", "batata2", "2005-08-12", 'M', "aaaa", "1234");
+//        User batata = new User("batata", null, "2015-09-29", null, "aaaa", "1234");
 //        System.out.println(batata);
 //        batata.save();
 
 
     }
 
-    public User(String name, String last_name, String birth, char sex, String login, String password) {
+    public User(String name, String last_name, String birth, Character sex, String login, String password) {
         this.id = -1;
         this.name = name;
         this.last_name = last_name; //pode ser nulo
@@ -35,7 +35,7 @@ public class User {
     }
 
     // construtor com id e timestamp e time opcional, polimorfismo
-    public User(short id, String name, String last_name, String birth, char sex, String login,
+    public User(short id, String name, String last_name, String birth, Character sex, String login,
                 String password, String timeStamp) {
         this.id = id;
         this.name = name;
@@ -52,6 +52,7 @@ public class User {
             Model.setUserInfo(name, last_name, birth, sex, login, password);
             return true;
         } catch (SQLException e) {
+            e.printStackTrace();
             return false;
         }
     }
