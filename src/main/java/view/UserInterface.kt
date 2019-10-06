@@ -1,13 +1,10 @@
 package view
 import br.com.ConexaoBanco.TreatmentModel
 import br.com.ConexaoBanco.User
-import br.com.ConexaoBanco.TreatmentModel
 
 object View {
     // espressão regular que verifica se a data esta no formato correto YYYY-MM-DD
     private val regex = """^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$""".toRegex()
-
-    val teste = TreatmentModel.getIdFromLogin("");
 
     fun menu() {
         println("Bem vindo")

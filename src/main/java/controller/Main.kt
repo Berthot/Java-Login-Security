@@ -8,6 +8,7 @@ var flag = true
 
 
 fun main(args: Array<String>) {
+
     while (flag){
         View.menu()
         val choice = readLine()
@@ -70,7 +71,7 @@ private fun recoveryPassword() {
         println("Primeiro Nome: ")
         var firstName = readLine()
         while (firstName.isNullOrBlank()) firstName = readLine()
-        if(TreatmentModel.verifyFirstName(login, firstName) != true){
+        if(TreatmentModel.verifyFirstName(login, firstName.capitalize()) != true){
             println("Login e Primeiro nome nao compativeis")
             println("--------------------------")
             break
@@ -89,7 +90,7 @@ private fun recoveryPassword() {
         if(newPass != newPassVer) passw = verifyTwoPass(newPass, newPassVer)
         TreatmentModel.setNewPassword(passw, id)
         println("Trocou a senha com Sucesso")
-
+        break
 
     }
 
