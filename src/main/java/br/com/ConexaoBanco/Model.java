@@ -36,7 +36,7 @@ public class Model {
     }
 
 
-    static void setUserInfo(String firstName, String lastName, String byrth, char sex, String login, String pass) throws SQLException {
+    static void setUserInfo(String firstName, String lastName, String byrth, Character sex, String login, String pass) throws SQLException {
         String selectSql = "insert into public_users values (default,?, ?, ?, ?, ?, ?, default);";
         Connection connSubmit = getConexaoMySQL();
 
@@ -45,8 +45,13 @@ public class Model {
             statement.setString(1, firstName);
             statement.setObject(2, lastName, Types.VARCHAR); // null
             statement.setObject(3, byrth, Types.DATE);
-//            statement.setString(3, byrth);
-            statement.setObject(4, String.valueOf(sex), Types.CHAR);
+
+            if (sex != null){  // evita null pointer exeption
+                statement.setObject(4, Character.toString(sex), Types.CHAR);
+            } else {
+                statement.setObject(4, sex, Types.CHAR);
+            }
+
             statement.setString(5, login);
             statement.setString(6, pass);
             statement.executeUpdate();

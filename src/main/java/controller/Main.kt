@@ -14,14 +14,13 @@ fun main(args: Array<String>) {
             indexer(choice)
         }
     }
-
 }
 
 fun indexer(choice: String){
-    when(choice) {
+    when(choice) { // swich case with super powers
         "0" -> {
-            println("criar conta")
-            View.newAccont()
+            println("Criar conta")
+            createAccont()
         }
         "1" -> println("Acessar conta")
         "2" -> println("Recuperar senha")
@@ -29,12 +28,23 @@ fun indexer(choice: String){
     }
 }
 
-private fun creat_accont() {
-    val usuario = User("Kotlin", "melhor que java", null, 'M', "kt", "kt")
-    if(usuario.save()) {
-        println(usuario)
+private fun createAccont() {
+
+    val userData = View.newAccont() // chamada da view
+
+    val name = userData[0]!!.capitalize()
+    val last = if (!userData[1].isNullOrBlank()) userData[1]!!.capitalize() else null
+    val birth = if (!userData[2].isNullOrBlank()) userData[2] else null
+    val sex = if (!userData[3].isNullOrBlank()) userData[3]!!.get(0) else null
+    val login = userData[4]
+    val encriptedPassword = CreateHash.getHash(userData[5])
+
+    val usuario = User(name, last, birth, sex, login, encriptedPassword)
+    if (usuario.save()) {
+        println("USUARIO SALVO COM SUCESSO")
     } else {
-        println("Errooo")
+        println("ERRO USUARIO NÃO SALVO")
     }
+
 
 }
