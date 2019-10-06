@@ -7,7 +7,7 @@ object View {
     private val regex = """^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$""".toRegex()
 
     fun menu() {
-        println("Bem vindo")
+//        println("Bem vindo")
         println("--------------------------")
         println("[0] - Criar Conta:        ")
         println("[1] - Acessar sua conta:  ")
@@ -76,6 +76,7 @@ object View {
     fun replacePassword(pass: String): String {
         return (pass.map { "*" }).joinToString("")
     }
+
 
 
 }

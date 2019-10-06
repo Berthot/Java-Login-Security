@@ -1,3 +1,5 @@
+@file:Suppress("UNREACHABLE_CODE")
+
 package controller
 
 import br.com.ConexaoBanco.TreatmentModel
@@ -6,8 +8,7 @@ import view.View
 
 var flag = true
 
-
-fun main(args: Array<String>) {
+fun main() {
 
     while (flag){
         View.menu()
@@ -26,7 +27,7 @@ fun indexer(choice: String){
         }
         "1" -> {
             println("Acessar conta")
-
+            acessAccount()
         }
         "2" -> {
             println("Recuperar senha")
@@ -43,7 +44,7 @@ private fun createAccont() {
     val name = userData[0]!!.capitalize()
     val last = if (!userData[1].isNullOrBlank()) userData[1]!!.capitalize() else null
     val birth = if (!userData[2].isNullOrBlank()) userData[2] else null
-    val sex = if (!userData[3].isNullOrBlank()) userData[3]!!.get(0) else null
+    val sex = if (!userData[3].isNullOrBlank()) userData[3]!![0] else null
     val login = userData[4]
     val encriptedPassword = CreateHash.getHash(userData[5])
 
@@ -81,14 +82,14 @@ private fun recoveryPassword() {
 
         println("Insira sua nova senha:")
         var newPass = CreateHash.getHash(readLine())
-        while (newPass.isNullOrBlank()) newPass = readLine()
+        while (newPass.isNullOrBlank()) newPass = CreateHash.getHash(readLine())
 
         println("Insira novamente sua senha:")
         var newPassVer = CreateHash.getHash(readLine())
-        while (newPassVer.isNullOrBlank()) newPassVer = readLine()
-        var passw = newPass
-        if(newPass != newPassVer) passw = verifyTwoPass(newPass, newPassVer)
-        TreatmentModel.setNewPassword(passw, id)
+        while (newPassVer.isNullOrBlank()) newPassVer = CreateHash.getHash(readLine())
+
+        if(newPass != newPassVer) newPass = verifyTwoPass(newPass, newPassVer)
+        TreatmentModel.setNewPassword(newPass, id)
         println("Trocou a senha com Sucesso")
         break
 
@@ -100,12 +101,58 @@ private fun verifyTwoPass(pass1: String, pass2: String): String{
     while(pass1 != pass2) {
         println("Insira sua nova senha:")
         var newPass = CreateHash.getHash(readLine())
-        while (newPass.isNullOrBlank()) newPass = readLine()
+        while (newPass.isNullOrBlank()) newPass = CreateHash.getHash(readLine())
 
         println("Insira novamente sua senha:")
         var newPassVer = CreateHash.getHash(readLine())
-        while (newPassVer.isNullOrBlank()) newPassVer = readLine()
+        while (newPassVer.isNullOrBlank()) newPassVer = CreateHash.getHash(readLine())
     }
 
     return pass1
+}
+
+private fun acessAccount(){
+    while(true) {
+        println("--------------------------")
+        print("Seu login: ")
+        var login = readLine()
+        while (login.isNullOrBlank()) login = readLine()
+        val id = TreatmentModel.getIdFromLoginUser(login)
+        print("Sua Senha: ")
+        var passsword = CreateHash.getHash(readLine())
+        while (passsword.isNullOrBlank()) passsword = CreateHash.getHash(readLine())
+
+        println("--------------------------")
+        if(!TreatmentModel.matchPassword(id,passsword)) {
+            println("Usuario ou senha incorretos!")
+            break
+        }
+        println("Acesso Garantido!!")
+
+
+
+
+
+        var user = User.get_user(id.toShort())
+        println("Seu ID: " + user.id)
+        println("Seu Primeiro nome: " + user.name)
+        println("Seu Sobremnome: " + user.last_name)
+        println("Sua data de aniversario: " + user.birth)
+        println("Seu Sexo: " + getSex(user.sex))
+        println("Seu login: " + user.login)
+        println("Data de criação: " + user.timeStamp)
+        break
+
+
+
+
+    }
+}
+
+fun getSex(sex: Char): String {
+    return if (sex == 'M') {
+        "Homem"
+    } else {
+        "Mulher"
+    }
 }

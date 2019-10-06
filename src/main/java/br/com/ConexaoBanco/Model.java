@@ -69,9 +69,9 @@ public class Model {
         return null;
     }
 
-    ResultSet getPassFromId(int id) throws SQLException {
+    static ResultSet getPassFromId(int id) throws SQLException {
 
-        String selectSql = "select user_pass from public_users where user_id = ?;";
+        String selectSql = "select user_password from public_users where user_id = ?;";
         Connection connSubmit = getConexaoMySQL();
 
         if (connSubmit != null) {

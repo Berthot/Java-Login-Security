@@ -54,12 +54,13 @@ public class TreatmentModel extends Model{
 
     }
 
-    public Boolean matchPassword(int id, String hash) throws SQLException {
+    public static Boolean matchPassword(int id, String userPassword) throws SQLException {
         ResultSet pass = getPassFromId(id);
-        pass.next();
-        String db_pass = pass.getString("user_pass");
-        return hash.equals(db_pass);
-
+        if(pass.next()) {
+            String db_pass = pass.getString("user_password");
+            return userPassword.equals(db_pass);
+        }
+        return false;
     }
 
     public static void setNewPassword(String pass, int id) throws SQLException {
