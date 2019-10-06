@@ -10,7 +10,6 @@ import java.util.stream.IntStream;
 public class Model {
     private static String status = "Não conectou...";
 
-
     static ResultSet getUserInfo(short id) throws SQLException {
         String selectSql = "select * from public_users where user_id = ?";
         Connection connSubmit = getConexaoMySQL();
@@ -34,7 +33,6 @@ public class Model {
         }
         return null;
     }
-
 
     static void setUserInfo(String firstName, String lastName, String byrth, Character sex, String login, String pass) throws SQLException {
         String selectSql = "insert into public_users values (default,?, ?, ?, ?, ?, ?, default);";
@@ -131,6 +129,21 @@ public class Model {
         return getConexaoMySQL();
     }
 
+    public static void updatePassword(String pass, int id) throws SQLException {
+//        update public_users # atualizar linha
+//        set user_password = ? # seleciona oque deve mudar
+//        where user_id = ?; # aonde deve alterar
+//
+        String selectSql = "update public_users set user_password = ? where user_id = ?;";
+        Connection connSubmit = getConexaoMySQL();
+
+        if (connSubmit != null) {
+            PreparedStatement statement = connSubmit.prepareStatement(selectSql);
+            statement.setString(1, pass);
+            statement.setObject(2, id);
+            statement.executeUpdate();
+        }
+    }
 
 
 }

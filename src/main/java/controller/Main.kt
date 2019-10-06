@@ -1,5 +1,6 @@
 package controller
 
+import br.com.ConexaoBanco.TreatmentModel
 import br.com.ConexaoBanco.User
 import view.View
 
@@ -22,8 +23,14 @@ fun indexer(choice: String){
             println("Criar conta")
             createAccont()
         }
-        "1" -> println("Acessar conta")
-        "2" -> println("Recuperar senha")
+        "1" -> {
+            println("Acessar conta")
+
+        }
+        "2" -> {
+            println("Recuperar senha")
+            recoveryPassword()
+        }
         "3" -> flag = false
     }
 }
@@ -47,4 +54,57 @@ private fun createAccont() {
     }
 
 
+}
+
+private fun recoveryPassword() {
+    while(true){
+
+        println("--------------------------")
+        println("Primeiro passo nos indique seu login:")
+        println("Seu login: ")
+        print('>')
+        var login = readLine()
+        while (login.isNullOrBlank()) login = readLine()
+        println("--------------------------")
+        println("Segundo passo nos indique seu Primeiro Nome:")
+        println("Primeiro Nome: ")
+        var firstName = readLine()
+        while (firstName.isNullOrBlank()) firstName = readLine()
+        if(TreatmentModel.verifyFirstName(login, firstName) != true){
+            println("Login e Primeiro nome nao compativeis")
+            println("--------------------------")
+            break
+        }
+        println("--------------------------")
+        val id = TreatmentModel.getIdFromLoginUser(login)
+
+        println("Insira sua nova senha:")
+        var newPass = CreateHash.getHash(readLine())
+        while (newPass.isNullOrBlank()) newPass = readLine()
+
+        println("Insira novamente sua senha:")
+        var newPassVer = CreateHash.getHash(readLine())
+        while (newPassVer.isNullOrBlank()) newPassVer = readLine()
+        var passw = newPass
+        if(newPass != newPassVer) passw = verifyTwoPass(newPass, newPassVer)
+        TreatmentModel.setNewPassword(passw, id)
+        println("Trocou a senha com Sucesso")
+
+
+    }
+
+}
+
+private fun verifyTwoPass(pass1: String, pass2: String): String{
+    while(pass1 != pass2) {
+        println("Insira sua nova senha:")
+        var newPass = CreateHash.getHash(readLine())
+        while (newPass.isNullOrBlank()) newPass = readLine()
+
+        println("Insira novamente sua senha:")
+        var newPassVer = CreateHash.getHash(readLine())
+        while (newPassVer.isNullOrBlank()) newPassVer = readLine()
+    }
+
+    return pass1
 }
