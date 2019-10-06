@@ -38,6 +38,7 @@ public class TreatmentModel extends Model{
         return infoArray(x);
     }
 
+
     public static int getIdFromLoginUser(String login) throws SQLException {
         ResultSet user = getIdFromLoginDb(login);
         if(user.next()){
