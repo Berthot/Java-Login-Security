@@ -33,8 +33,8 @@ public class TreatmentModel extends Model{
         return infoArray(x);
     }
 
-    public int getIdFromLogin(String login) throws SQLException {
-        ResultSet user = this.getIdFromLoginDb(login);
+    public static int getIdFromLogin(String login) throws SQLException {
+        ResultSet user = getIdFromLoginDb(login);
         if(user.next()){
             return user.getInt("user_id");
         }

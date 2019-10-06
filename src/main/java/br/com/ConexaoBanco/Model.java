@@ -58,7 +58,7 @@ public class Model {
         }
     }
 
-    ResultSet getIdFromLoginDb(String login) throws SQLException {
+    static ResultSet getIdFromLoginDb(String login) throws SQLException {
 
         String selectSql = "select user_id from public_users where user_login = ?;";
         Connection connSubmit = getConexaoMySQL();

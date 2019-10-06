@@ -1,9 +1,12 @@
 package view
 import br.com.ConexaoBanco.User
+import br.com.ConexaoBanco.TreatmentModel
 
 object View {
     // espressão regular que verifica se a data esta no formato correto YYYY-MM-DD
     private val regex = """^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$""".toRegex()
+
+    val teste = TreatmentModel.getIdFromLogin("");
 
     fun menu() {
         println("Bem vindo")
@@ -43,18 +46,34 @@ object View {
         var login = readLine()
         while (login.isNullOrBlank()) login = readLine()
 
-        println("*Sua senha:")
-        var pass = readLine()
-        while (pass.isNullOrBlank()) pass = readLine()
+        var pass1: String
+        var pass2: String
+
+        do {
+            println("*Sua senha:")
+            pass1 = readLine()!!
+            while (pass1.isBlank()) pass1 = readLine()!!
+
+            println("Digite novamente a senha:")
+            pass2 = readLine()!!
+            while (pass2.isBlank()) pass2 = readLine()!!
+
+            if (pass1 != pass2) {
+                println("As senhas não batem, por favor digite novamente")
+            }
+
+        }while (pass1 != pass2)
+
+
 
         println("--------------------------")
         println("Nome: $name $lastname" +
                 "\nData de Nascimento: $birth" +
                 "\nSexo: $sex" +
                 "\nLogin: $login" +
-                "\nSenha: ${replacePassword(pass)}\n")
+                "\nSenha: ${replacePassword(pass1)}\n")
 
-        return listOf(name, lastname, birth, sex, login, pass)
+        return listOf(name, lastname, birth, sex, login, pass1)
 
 
     }
