@@ -1,4 +1,5 @@
 package view
+import br.com.ConexaoBanco.TreatmentModel
 import br.com.ConexaoBanco.User
 
 object View {
@@ -22,28 +23,28 @@ object View {
         println("Compos com * são obrigatórios")
         println("--------------------------")
 
-        println("*Digite seu nome:")
+        println("*Digite seu nome: ")
         var name = readLine()
         while (name.isNullOrBlank()) name = readLine()
 
-        println("Digite seu sobrenome:")
+        println("Digite seu sobrenome: ")
         val lastname = readLine()
 
-        println("Digite sua data de nascimento:")
+        println("Digite sua data de nascimento: ")
         println("Formato YYYY-MM-DD")
         var birth = readLine()
         while (!(birth.isNullOrBlank()) and !(birth?.let { regex.matches(it) }!!)) birth = readLine()
 
-        println("Seu sexo:")
+        println("Seu sexo: ")
         println("M/F")
         var sex = readLine()!!.toUpperCase()
         while (!(sex.isBlank())  and (sex != "M") and (sex != "F")) sex = readLine()!!.toUpperCase()
 
-        println("*Seu login:")
+        println("*Seu login: ")
         var login = readLine()
         while (login.isNullOrBlank()) login = readLine()
 
-        println("*Sua senha:")
+        println("*Sua senha: ")
         var pass = readLine()
         while (pass.isNullOrBlank()) pass = readLine()
 
@@ -62,5 +63,6 @@ object View {
     fun replacePassword(pass: String): String {
         return (pass.map { "*" }).joinToString("")
     }
+
 
 }

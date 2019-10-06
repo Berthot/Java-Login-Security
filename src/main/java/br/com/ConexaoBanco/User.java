@@ -47,6 +47,38 @@ public class User {
         this.timeStamp = timeStamp;
     }
 
+    public short getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public String getBirth() {
+        return birth;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getTimeStamp() {
+        return timeStamp;
+    }
+
+    public Character getSex() {
+        return sex;
+    }
+
     public boolean save() {
         try {
             Model.setUserInfo(name, last_name, birth, sex, login, password);
