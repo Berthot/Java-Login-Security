@@ -1,4 +1,5 @@
-# Java-Login-Security
+# Autenticação com hash criptográfico
+### Disciplina: Segurança da Informação
 
 ## Desafio
 
@@ -13,3 +14,9 @@ realizar a função hash para armazenamento da senha.
 2. Pesquise um algoritmo/código fonte de força bruta para MD5 e processe o arquivo que
 contém as senhas armazenadas. Compute o tempo necessário para realizar a quebra de hash
 de 04 usuários.
+
+
+Integrantes: www.github.com/berthot,
+Integrantes: www.github.com/allanvobraun
+
+Professor: Vilmar Abreu Junior
