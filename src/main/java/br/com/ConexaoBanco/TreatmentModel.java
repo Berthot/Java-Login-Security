@@ -1,13 +1,24 @@
 package br.com.ConexaoBanco;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class TreatmentModel extends Model{
-    private int userId;
+
+    private static ArrayList<String> getPasswords() throws SQLException {
+        ResultSet result = getAll();
+        ArrayList<String> passwords = new ArrayList<>();
+
+        while(result.next()) {
+            passwords.add(result.getString("user_password"));
+        }
+        return passwords;
+    }
 
     private static List<String> infoArray(ResultSet x) throws SQLException {
         Objects.requireNonNull(x).next();

@@ -10,6 +10,23 @@ import java.util.stream.IntStream;
 public class Model {
     private static String status = "Não conectou...";
 
+
+    public static void main(String[] args) throws SQLException {
+
+    }
+
+
+    static ResultSet getAll() throws SQLException {
+        String selectSql = "select * from public_users";
+        Connection connSubmit = getConexaoMySQL();
+
+        if (connSubmit != null) {
+            PreparedStatement statement = connSubmit.prepareStatement(selectSql);
+            return statement.executeQuery();
+        }
+        return null;
+    }
+
     static ResultSet getUserInfo(short id) throws SQLException {
         String selectSql = "select * from public_users where user_id = ?";
         Connection connSubmit = getConexaoMySQL();

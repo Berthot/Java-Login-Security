@@ -20,20 +20,7 @@ public class CreateHash {
         return CreateHash.hash(pass);
     }
 
-    public static void main(String[] args) throws NoSuchAlgorithmException {
-       String pass = "ByCp";
-       String hash1 = CreateHash.getHash(pass);
-       System.out.println(hash1);
-       long startTime = System.currentTimeMillis();
-       breakHash(hash1);
-       long endTime = System.currentTimeMillis();
 
-
-       long time = endTime - startTime;
-       System.out.println(time);
-
-
-    }
 
     static void breakHash(String Hash) throws NoSuchAlgorithmException {
         String findHash;
