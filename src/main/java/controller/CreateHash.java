@@ -1,17 +1,17 @@
 package controller;
 
+import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.math.*;
 
 public class CreateHash {
-
-    private String hash;
+    long endTIme = System.currentTimeMillis();
+    long startTime = System.currentTimeMillis();
 
     public static String hash(String pass) throws NoSuchAlgorithmException {
         MessageDigest m = MessageDigest.getInstance("MD5");
         m.update(pass.getBytes(), 0, pass.length());
-        return new BigInteger(1, m.digest()).toString(16);
+        return new BigInteger(1, m.digest()).toString(64);
 
     }
 
@@ -20,10 +20,19 @@ public class CreateHash {
         return CreateHash.hash(pass);
     }
 
-    public static void main(String[] args) throws NoSuchAlgorithmException {
-        System.out.println(CreateHash.getHash("aaaa"));
-        System.out.println(CreateHash.getHash("aaaa"));
-        System.out.println(CreateHash.getHash("AAAA"));
-        System.out.println(CreateHash.getHash("AAAA"));
+
+
+    static void breakHash(String Hash) throws NoSuchAlgorithmException {
+        String findHash;
+        String result = null;
+        do{
+            findHash = getHash(keyGen.getChar(4));
+            if(findHash.equals(Hash)){
+                result = findHash;
+            }
+
+        }while(findHash != Hash);
+        System.out.println(result);
     }
+
 }
