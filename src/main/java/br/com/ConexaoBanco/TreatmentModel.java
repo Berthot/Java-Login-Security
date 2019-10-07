@@ -1,7 +1,4 @@
 package br.com.ConexaoBanco;
-import controller.CreateHash;
-import org.jetbrains.annotations.NotNull;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -32,12 +29,10 @@ public class TreatmentModel extends Model{
         return infoArray(x);
     }
 
-
     public static List<String> getInfos(short id) throws SQLException {
         ResultSet x = getUserInfo(id);
         return infoArray(x);
     }
-
 
     public static int getIdFromLoginUser(String login) throws SQLException {
         ResultSet user = getIdFromLoginDb(login);
@@ -46,7 +41,6 @@ public class TreatmentModel extends Model{
         }
         return 0;
     }
-
 
     public static Boolean verifyFirstName(String login, String firstName) throws SQLException{
         String firstNameDb = getInfos(login).get(1);
