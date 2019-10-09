@@ -16,6 +16,7 @@ public class CreateHash {
     }
 
     public static String getHash(String pass) throws NoSuchAlgorithmException {
+//        pass = "aa" + pass + "bb";
 //        System.out.println(CreateHash.hash(pass));
         return CreateHash.hash(pass);
     }

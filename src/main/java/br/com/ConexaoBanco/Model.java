@@ -2,10 +2,7 @@ package br.com.ConexaoBanco;
 
 
 import java.sql.*;
-import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Model {
     private static String status = "Não conectou...";
@@ -94,6 +91,7 @@ public class Model {
         if (connSubmit != null) {
             PreparedStatement statement = connSubmit.prepareStatement(selectSql);
             statement.setInt(1, id);
+//            statement.close() e a conexão
             return statement.executeQuery();
         }
         return null;

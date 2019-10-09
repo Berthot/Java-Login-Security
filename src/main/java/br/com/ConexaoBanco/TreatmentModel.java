@@ -20,6 +20,12 @@ public class TreatmentModel extends Model{
         return passwords;
     }
 
+    public static String getPassFromId(short id) throws SQLException {
+        ResultSet x = getUserInfo(id);
+        ArrayList array = (ArrayList) infoArray(x);
+        return (String) array.get(6);
+    }
+
     private static List<String> infoArray(ResultSet x) throws SQLException {
         Objects.requireNonNull(x).next();
         List<String> lista = IntStream.range(1,9).mapToObj(n -> {

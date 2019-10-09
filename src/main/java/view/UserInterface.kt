@@ -1,6 +1,4 @@
 package view
-import br.com.ConexaoBanco.TreatmentModel
-import br.com.ConexaoBanco.User
 
 object View {
     // espressão regular que verifica se a data esta no formato correto YYYY-MM-DD
@@ -8,12 +6,13 @@ object View {
 
     fun menu() {
 //        println("Bem vindo")
-        println("--------------------------")
-        println("[0] - Criar Conta:        ")
-        println("[1] - Acessar sua conta:  ")
-        println("[2] - Recuperar sua senha:")
-        println("[3] - Sair:")
-        println("--------------------------")
+        println("-----------------------------")
+        println("[1] - Criar Conta:           ")
+        println("[2] - Acessar sua conta:     ")
+        println("[3] - Recuperar sua senha:   ")
+//        println("[4] - Quebrar senha de um ID:")
+        println("[0] - Sair:                  ")
+        println("-----------------------------")
         println()
     }
 

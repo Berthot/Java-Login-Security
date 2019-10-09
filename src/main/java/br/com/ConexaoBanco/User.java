@@ -1,10 +1,5 @@
 package br.com.ConexaoBanco;
-import br.com.ConexaoBanco.Model;
-
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
-import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -12,17 +7,6 @@ public class User {
     private String name, last_name, birth, login, password, timeStamp;
     private Character sex;
 
-    public static void main(String[] args) throws SQLException {
-//        User a = User.get_user((short) 14);
-//        User b = User.get_user("jc");
-//        System.out.println(a);
-//        System.out.println(b);
-//        User batata = new User("batata", null, "2015-09-29", null, "aaaa", "1234");
-//        System.out.println(batata);
-//        batata.save();
-
-
-    }
 
     public User(String name, String last_name, String birth, Character sex, String login, String password) {
         this.id = -1;

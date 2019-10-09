@@ -21,19 +21,23 @@ fun main() {
 
 fun indexer(choice: String){
     when(choice) { // swich case with super powers
-        "0" -> {
+        "1" -> {
             println("Criar conta")
             createAccont()
         }
-        "1" -> {
+        "2" -> {
             println("Acessar conta")
             acessAccount()
         }
-        "2" -> {
+        "3" -> {
             println("Recuperar senha")
             recoveryPassword()
         }
-        "3" -> flag = false
+        "hash" -> {
+            println("Quebrar senha de um Login")
+            breakHash()
+        }
+        "0" -> flag = false
     }
 }
 
@@ -155,4 +159,30 @@ fun getSex(sex: Char): String {
     } else {
         "Mulher"
     }
+}
+
+fun breakHash(){
+    println("Insira o Login que quer quebrar a senha!")
+    print(">> ")
+    var login = readLine()
+    var id = TreatmentModel.getIdFromLoginUser(login)
+    var pass = id.toShort().let { TreatmentModel.getPassFromId(it) }
+    val hash = CreateHash.getHash(pass)
+    var startTime = System.currentTimeMillis()
+    println("Start Timer!!")
+    if (pass != null) {
+        Decriptor.breakMd5(hash, pass.length, num = true, upper = true, show = false)
+    }
+    var endtTime = System.currentTimeMillis()
+    val finish = (endtTime - startTime) / 1000
+    if (finish > 60) {
+        val min = finish % 60
+        val sec = finish - (min * 60)
+        println("$min: $sec")
+
+    } else {
+        println("$finish - Segundos")
+
+    }
+
 }
